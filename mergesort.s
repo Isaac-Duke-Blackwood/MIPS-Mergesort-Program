@@ -30,7 +30,8 @@ main:			#get list length from user and store it in list_length
 				addi $t0, $0, 2
 power2_loop:	beq $v0, $t0, end_power2
 				sll $t0, $t0, 1
-				blt $t0, $t1, power2_loop				
+				blt $t0, $t1, power2_loop
+				beq $t0, $t1, power2_loop				
 				j bad_length				#when all powers up to the sentinal value have been checked, we know its a bad list length
 end_power2:		
 				#get the list from the user with a for loop and store it in list.
